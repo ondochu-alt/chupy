@@ -15,7 +15,7 @@ const skillGroups = [
   },
 ];
 
-const brands = ["디어도어", "일레븐휴즈데이", "L'ESSENTIAL", "아이나코", "뉴벨", "Luvum"];
+const brands = ["디어도어", "일레븐휴즈데이", "L'ESSENTIAL", "아이나코", "누벨르", "Luvum"];
 
 export default function Skills() {
   return (
