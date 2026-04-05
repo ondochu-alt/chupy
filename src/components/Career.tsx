@@ -1,3 +1,5 @@
+import AnimatedSection from "./AnimatedSection";
+
 const careers = [
   {
     period: "2024.09 — 2025.11",
@@ -35,40 +37,43 @@ const careers = [
 
 export default function Career() {
   return (
-    <section className="bg-[#f3f4f5] py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16">
-        <div>
+    <section className="bg-[#f3f4f5] py-14 md:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 grid md:grid-cols-3 gap-8 md:gap-16">
+        <AnimatedSection>
           <h2
-            className="text-3xl font-bold tracking-tight sticky top-32"
+            className="text-2xl sm:text-3xl font-bold tracking-tight md:sticky md:top-32"
             style={{ fontFamily: "var(--font-headline)" }}
           >
             Experience | 경력
           </h2>
-        </div>
-        <div className="md:col-span-2 space-y-16">
+        </AnimatedSection>
+
+        <div className="md:col-span-2 space-y-10 md:space-y-16">
           {careers.map((career, i) => (
-            <div key={i} className="relative pl-8 border-l border-[#d6c1c7]/30">
-              <div
-                className={`absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full ${
-                  career.current ? "bg-[#8a4a65]" : "bg-[#d6c1c7]"
-                }`}
-              />
-              <span
-                className="text-[#514347] text-sm tracking-widest font-bold block mb-2 uppercase"
-                style={{ fontFamily: "var(--font-label)" }}
-              >
-                {career.period}
-              </span>
-              <h4
-                className="text-xl font-bold"
-                style={{ fontFamily: "var(--font-headline)" }}
-              >
-                {career.role} @ {career.company}
-              </h4>
-              <p className="text-[#514347] mt-4 leading-relaxed max-w-xl">
-                {career.description}
-              </p>
-            </div>
+            <AnimatedSection key={i} delay={i * 100}>
+              <div className="relative pl-6 sm:pl-8 border-l border-[#d6c1c7]/40">
+                <div
+                  className={`absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full transition-colors duration-300 ${
+                    career.current ? "bg-[#8a4a65]" : "bg-[#d6c1c7]"
+                  }`}
+                />
+                <span
+                  className="text-[#514347] text-xs sm:text-sm tracking-widest font-bold block mb-1 md:mb-2 uppercase"
+                  style={{ fontFamily: "var(--font-label)" }}
+                >
+                  {career.period}
+                </span>
+                <h4
+                  className="text-lg sm:text-xl font-bold"
+                  style={{ fontFamily: "var(--font-headline)" }}
+                >
+                  {career.role} @ {career.company}
+                </h4>
+                <p className="text-[#514347] mt-3 md:mt-4 leading-relaxed text-sm sm:text-base max-w-xl">
+                  {career.description}
+                </p>
+              </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

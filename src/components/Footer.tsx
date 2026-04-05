@@ -1,30 +1,32 @@
+import AnimatedSection from "./AnimatedSection";
+
 export default function Footer() {
   return (
     <footer
-      className="w-full py-12 mt-20 bg-zinc-50 border-t border-zinc-100"
+      className="w-full py-10 md:py-12 mt-12 md:mt-20 bg-zinc-50 border-t border-zinc-100"
       id="contact"
     >
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-12">
-        <div className="text-center md:text-left space-y-4">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-5 sm:px-8 gap-10 md:gap-12">
+        <AnimatedSection className="text-center md:text-left space-y-4 w-full md:w-auto">
           <h2
-            className="text-3xl font-bold text-zinc-900"
+            className="text-2xl sm:text-3xl font-bold text-zinc-900"
             style={{ fontFamily: "var(--font-headline)" }}
           >
             함께 가치를 만들어가요.
           </h2>
-          <p className="text-zinc-500">
+          <p className="text-zinc-500 text-sm sm:text-base">
             브랜드 전략 프로젝트 및 협업을 위한 연락은 언제든 환영합니다.
           </p>
           <a
             href="mailto:hello@chuyeeun.com"
-            className="inline-block bg-[#8a4a65] text-white px-10 py-4 rounded-xl font-bold hover:opacity-90 transition-opacity mt-4 shadow-lg shadow-[#8a4a65]/20"
+            className="inline-block bg-[#8a4a65] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all duration-150 mt-4 shadow-lg shadow-[#8a4a65]/20"
             style={{ fontFamily: "var(--font-headline)" }}
           >
             커피챗 시작하기
           </a>
-        </div>
+        </AnimatedSection>
 
-        <div className="flex flex-col md:items-end gap-6">
+        <AnimatedSection delay={150} className="flex flex-col items-center md:items-end gap-4 md:gap-6 w-full md:w-auto">
           <div
             className="font-bold text-zinc-900"
             style={{ fontFamily: "var(--font-headline)" }}
@@ -32,7 +34,7 @@ export default function Footer() {
             CHU YEEUN
           </div>
           <div
-            className="flex flex-col md:items-end text-sm tracking-wide gap-2"
+            className="flex flex-col items-center md:items-end text-sm tracking-wide gap-2"
             style={{ fontFamily: "var(--font-label)" }}
           >
             <a
@@ -41,29 +43,20 @@ export default function Footer() {
             >
               hello@chuyeeun.com
             </a>
-            <div className="flex gap-6 mt-4">
-              <a
-                href="#"
-                className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="#"
-                className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
-              >
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
-              >
-                Resume
-              </a>
+            <div className="flex gap-5 sm:gap-6 mt-3 md:mt-4">
+              {["LinkedIn", "Instagram", "Resume"].map((link) => (
+                <a
+                  key={link}
+                  href="#"
+                  className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
+                >
+                  {link}
+                </a>
+              ))}
             </div>
           </div>
-          <p className="text-xs text-zinc-400 mt-8">© 2025 추예은 포트폴리오.</p>
-        </div>
+          <p className="text-xs text-zinc-400 mt-4 md:mt-8">© 2025 추예은 포트폴리오.</p>
+        </AnimatedSection>
       </div>
     </footer>
   );
