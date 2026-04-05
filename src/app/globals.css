@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8a4a65;
+  --color-primary-container: #f0a1bf;
+  --color-primary-fixed: #ffd9e5;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #390721;
+  --color-on-primary-fixed-variant: #6f334d;
+  --color-on-primary-container: #71354f;
+
+  --color-secondary: #765561;
+  --color-secondary-container: #ffd5e2;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #7a5a65;
+
+  --color-surface: #f8f9fa;
+  --color-surface-dim: #d9dadb;
+  --color-surface-bright: #f8f9fa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+  --color-surface-variant: #e1e3e4;
+
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #514347;
+  --color-on-background: #191c1d;
+  --color-background: #f8f9fa;
+
+  --color-outline: #837378;
+  --color-outline-variant: #d6c1c7;
+  --color-inverse-surface: #2e3132;
+  --color-inverse-on-surface: #f0f1f2;
+  --color-inverse-primary: #ffb0cd;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+html {
+  scroll-behavior: smooth;
+}
