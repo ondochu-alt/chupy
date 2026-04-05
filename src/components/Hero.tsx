@@ -27,13 +27,6 @@ export default function Hero() {
         </p>
         <div className="flex items-center gap-6 pt-4">
           <a
-            href="#work"
-            className="bg-zinc-900 text-white px-8 py-4 rounded-md font-bold hover:opacity-90 transition-opacity"
-            style={{ fontFamily: "var(--font-headline)" }}
-          >
-            프로젝트 보기
-          </a>
-          <a
             href="#contact"
             className="text-zinc-900 font-bold flex items-center gap-2 group"
             style={{ fontFamily: "var(--font-headline)" }}
