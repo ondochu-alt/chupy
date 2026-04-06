@@ -82,8 +82,8 @@ export default function Projects() {
         {/* Small: 해외 시딩 */}
         <AnimatedSection delay={150} className="md:col-span-4">
           <div className="group">
-            <div className="aspect-[16/9] sm:aspect-square rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              Project Image
+            <div className="aspect-[22/9] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
+              <img src="/seeding_combined.jpeg" alt="해외 리뷰어 시딩 캠페인" className="w-full h-full object-cover" />
             </div>
             <div className="flex gap-2 mb-2 md:mb-3">
               <span
