@@ -31,7 +31,7 @@ export default function Projects() {
         <AnimatedSection delay={0} className="md:col-span-8">
           <div className="group">
             <div className="aspect-[16/9] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              Project Image
+              <img src="/page004_img02.jpeg" alt="올리브영 바디케어 인플루언서 마케팅" className="w-full h-full object-cover" />
             </div>
             <div className="flex gap-2 mb-2 md:mb-3">
               <span
