@@ -105,7 +105,7 @@ export default function Projects() {
         {/* Large: 네이버 라이브 */}
         <AnimatedSection delay={200} className="md:col-span-6">
           <div className="group">
-            <div className="aspect-[3/1] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
+            <div className="aspect-[13/6] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
               <img src="/naver_live_combined.jpeg" alt="네이버 쇼핑 라이브" className="w-full h-full object-cover" />
             </div>
             <div className="flex gap-2 mb-2 md:mb-3">
