@@ -45,9 +45,9 @@ export default function Hero() {
             Profile Photo
           </div>
         </div>
-        <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-[#ffd9e5] p-5 sm:p-8 rounded-xl hidden md:block">
+        <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-[#ffd9e5] p-4 sm:p-8 rounded-xl">
           <span
-            className="block text-3xl sm:text-4xl font-extrabold text-[#390721]"
+            className="block text-2xl sm:text-4xl font-extrabold text-[#390721]"
             style={{ fontFamily: "var(--font-headline)" }}
           >
             5.7+
