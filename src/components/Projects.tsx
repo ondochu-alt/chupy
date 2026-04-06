@@ -29,7 +29,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
         {/* Large: 올리브영 */}
         <AnimatedSection delay={0} className="md:col-span-8">
-          <div className="group">
+          <a href="/oliveyoung" className="group block">
             <div className="aspect-[16/9] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
               <img src="/page004_img02.jpeg" alt="올리브영 바디케어 인플루언서 마케팅" className="w-full h-full object-cover" />
             </div>
@@ -48,12 +48,12 @@ export default function Projects() {
               </span>
             </div>
             <h3
-              className="text-xl sm:text-2xl font-bold"
+              className="text-xl sm:text-2xl font-bold group-hover:text-[#8a4a65] transition-colors"
               style={{ fontFamily: "var(--font-headline)" }}
             >
               올리브영 바디케어 인플루언서 마케팅
             </h3>
-          </div>
+          </a>
         </AnimatedSection>
 
         {/* Small: 박람회 */}
