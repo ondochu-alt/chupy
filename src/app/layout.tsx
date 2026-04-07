@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "추예은 | 콘텐츠 & 브랜드 전략 마케터",
   description:
     "데이터로 가설을 세우고, 감각적인 영상으로 성과를 증명하는 브랜드 전략 마케터 추예은의 포트폴리오입니다.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

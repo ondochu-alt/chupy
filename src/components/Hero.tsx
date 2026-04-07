@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
@@ -40,10 +42,15 @@ export default function Hero() {
       </div>
 
       <div className="flex-1 relative w-full hero-animate-d3">
-        <div className="aspect-[4/5] w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-xl overflow-hidden bg-[#e1e3e4]">
-          <div className="w-full h-full flex items-center justify-center text-[#514347] text-sm">
-            Profile Photo
-          </div>
+        <div className="aspect-[3/4] w-56 sm:w-full sm:aspect-[4/5] sm:max-w-sm md:max-w-md mx-auto rounded-xl overflow-hidden bg-[#e1e3e4]">
+          <Image
+            src="/profile.jpg"
+            alt="추예은 프로필 사진"
+            width={600}
+            height={750}
+            className="w-full h-full object-cover object-center"
+            priority
+          />
         </div>
         <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 bg-[#ffd9e5] p-4 sm:p-8 rounded-xl">
           <span

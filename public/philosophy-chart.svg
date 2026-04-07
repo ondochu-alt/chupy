@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+
+  <!-- Baseline -->
+  <line x1="90" y1="390" x2="710" y2="390" stroke="#514347" stroke-width="1" opacity="0.12"/>
+
+  <!-- Bar 1: h=60 -->
+  <polygon points="105,390 185,390 185,330 105,330" fill="#8a4a65" opacity="0.28"/>
+  <polygon points="105,330 185,330 215,315 135,315" fill="#b07a90" opacity="0.28"/>
+  <polygon points="185,390 215,375 215,315 185,330" fill="#5e3248" opacity="0.28"/>
+
+  <!-- Bar 2: h=110 -->
+  <polygon points="225,390 305,390 305,280 225,280" fill="#8a4a65" opacity="0.46"/>
+  <polygon points="225,280 305,280 335,265 255,265" fill="#b07a90" opacity="0.46"/>
+  <polygon points="305,390 335,375 335,265 305,280" fill="#5e3248" opacity="0.46"/>
+
+  <!-- Bar 3: h=170 -->
+  <polygon points="345,390 425,390 425,220 345,220" fill="#8a4a65" opacity="0.63"/>
+  <polygon points="345,220 425,220 455,205 375,205" fill="#b07a90" opacity="0.63"/>
+  <polygon points="425,390 455,375 455,205 425,220" fill="#5e3248" opacity="0.63"/>
+
+  <!-- Bar 4: h=240 -->
+  <polygon points="465,390 545,390 545,150 465,150" fill="#8a4a65" opacity="0.80"/>
+  <polygon points="465,150 545,150 575,135 495,135" fill="#b07a90" opacity="0.80"/>
+  <polygon points="545,390 575,375 575,135 545,150" fill="#5e3248" opacity="0.80"/>
+
+  <!-- Bar 5: h=310, accent top -->
+  <polygon points="585,390 665,390 665,80 585,80" fill="#8a4a65"/>
+  <polygon points="585,80 665,80 695,65 615,65" fill="#f0a1bf"/>
+  <polygon points="665,390 695,375 695,65 665,80" fill="#5e3248"/>
+
+  <!-- Dashed trend line through front-top midpoints -->
+  <path d="M145,330 C192,314 228,290 265,280 C306,269 350,232 385,220 C426,207 466,162 505,150 C548,137 583,94 625,80"
+        stroke="#f0a1bf" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5" fill="none"/>
+
+  <!-- Peak dots -->
+  <circle cx="145" cy="330" r="2.5" fill="#8a4a65" opacity="0.4"/>
+  <circle cx="265" cy="280" r="2.5" fill="#8a4a65" opacity="0.55"/>
+  <circle cx="385" cy="220" r="2.5" fill="#8a4a65" opacity="0.7"/>
+  <circle cx="505" cy="150" r="2.5" fill="#8a4a65" opacity="0.85"/>
+  <circle cx="625" cy="80" r="4.5" fill="#f0a1bf"/>
+
+  <!-- Label -->
+  <text x="625" y="62" text-anchor="middle" font-size="10" font-weight="700"
+        fill="#8a4a65" font-family="'Inter', ui-sans-serif, sans-serif" letter-spacing="0.8">2000%↑</text>
+
+  <!-- Left scale ticks -->
+  <line x1="85" y1="330" x2="100" y2="330" stroke="#514347" stroke-width="0.8" opacity="0.15"/>
+  <line x1="85" y1="280" x2="100" y2="280" stroke="#514347" stroke-width="0.8" opacity="0.12"/>
+  <line x1="85" y1="220" x2="100" y2="220" stroke="#514347" stroke-width="0.8" opacity="0.09"/>
+  <line x1="85" y1="150" x2="100" y2="150" stroke="#514347" stroke-width="0.8" opacity="0.07"/>
+  <line x1="85" y1="80"  x2="100" y2="80"  stroke="#514347" stroke-width="0.8" opacity="0.05"/>
+
+  <!-- Decorative right-side dots -->
+  <circle cx="742" cy="110" r="3"   fill="#f0a1bf" opacity="0.28"/>
+  <circle cx="756" cy="200" r="2"   fill="#8a4a65" opacity="0.18"/>
+  <circle cx="748" cy="300" r="1.5" fill="#8a4a65" opacity="0.13"/>
+
+  <!-- Subtle up-arrow axis -->
+  <path d="M752,385 L752,95 M745,110 L752,95 L759,110"
+        stroke="#8a4a65" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.1"/>
+
+</svg>

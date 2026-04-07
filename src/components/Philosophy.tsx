@@ -1,4 +1,7 @@
+"use client";
+
 import AnimatedSection from "./AnimatedSection";
+import WatercolorFlowers from "./WatercolorFlowers";
 
 export default function Philosophy() {
   return (
@@ -44,17 +47,18 @@ export default function Philosophy() {
                 감각적인 크리에이티브
               </h4>
               <p className="text-[#514347] leading-relaxed">
-                입생로랑, 맥도날드, 디올 등 글로벌 브랜드 영상 콘텐츠 제작 경험을 바탕으로,
-                브랜드의 톤과 감성에 맞는 콘텐츠를 기획·제작합니다.
+                입생로랑, 맥도날드, 디올 등 글로벌 브랜드와 협력한 영상 콘텐츠 기획·제작 경험을 바탕으로,
+                브랜드의 톤과 감성에 맞는 콘텐츠를 직접 기획하고 제작합니다.
+                기획부터 편집·제작까지 영상 콘텐츠 전 과정을 수행할 수 있습니다.
               </p>
             </div>
           </AnimatedSection>
         </div>
       </div>
 
-      <AnimatedSection delay={150} className="hidden md:block">
-        <div className="rounded-xl overflow-hidden shadow-sm bg-[#edeeef] aspect-video flex items-center justify-center text-[#514347] text-sm">
-          Work Image
+      <AnimatedSection delay={150} className="hidden md:flex items-center justify-center">
+        <div className="w-full h-[480px]">
+          <WatercolorFlowers />
         </div>
       </AnimatedSection>
     </section>
