@@ -1,8 +1,10 @@
 import AnimatedSection from "./AnimatedSection";
+import SnsReels from "./SnsReels";
 
 export default function Projects() {
   return (
     <section className="max-w-7xl mx-auto px-5 sm:px-6 py-14 md:py-24" id="work">
+      {/* 섹션 헤더 */}
       <AnimatedSection>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-16 gap-3">
           <div>
@@ -23,6 +25,40 @@ export default function Projects() {
           >
             전체 보기
           </a>
+        </div>
+      </AnimatedSection>
+
+      {/* ── 섹션 1: SNS 콘텐츠 기획 제작 ── */}
+      <AnimatedSection>
+        <div className="mb-5 md:mb-8">
+          <h3
+            className="text-xl sm:text-2xl font-bold tracking-tight"
+            style={{ fontFamily: "var(--font-headline)" }}
+          >
+            SNS 콘텐츠 기획 제작
+          </h3>
+          <p className="text-[#514347] mt-1 text-sm">
+            숏폼 영상 기획부터 제작까지, 직접 만든 릴스 콘텐츠
+          </p>
+        </div>
+      </AnimatedSection>
+
+      <div className="mb-16 md:mb-24">
+        <SnsReels />
+      </div>
+
+      {/* ── 섹션 2: 마케팅 캠페인 & 이벤트 기획 ── */}
+      <AnimatedSection>
+        <div className="mb-8 md:mb-12">
+          <h3
+            className="text-xl sm:text-2xl font-bold tracking-tight"
+            style={{ fontFamily: "var(--font-headline)" }}
+          >
+            마케팅 캠페인 & 이벤트 기획
+          </h3>
+          <p className="text-[#514347] mt-1 text-sm">
+            인플루언서 마케팅, 박람회 기획, 라이브 커머스 등 다양한 캠페인
+          </p>
         </div>
       </AnimatedSection>
 
