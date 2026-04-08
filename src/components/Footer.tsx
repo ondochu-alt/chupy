@@ -18,7 +18,7 @@ export default function Footer() {
             브랜드 전략 프로젝트 및 협업을 위한 연락은 언제든 환영합니다.
           </p>
           <a
-            href="mailto:hello@chuyeeun.com"
+            href="mailto:ondo.chu@gmail.com"
             className="inline-block bg-[#8a4a65] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all duration-150 mt-4 shadow-lg shadow-[#8a4a65]/20"
             style={{ fontFamily: "var(--font-headline)" }}
           >
@@ -38,10 +38,10 @@ export default function Footer() {
             style={{ fontFamily: "var(--font-label)" }}
           >
             <a
-              href="mailto:hello@chuyeeun.com"
+              href="mailto:ondo.chu@gmail.com"
               className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
             >
-              hello@chuyeeun.com
+              ondo.chu@gmail.com
             </a>
             <div className="flex gap-5 sm:gap-6 mt-3 md:mt-4">
               {["LinkedIn", "Instagram", "Resume"].map((link) => (

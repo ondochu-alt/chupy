@@ -1,6 +1,64 @@
 import AnimatedSection from "./AnimatedSection";
 import SnsReels from "./SnsReels";
 
+const campaigns = [
+  {
+    href: "/oliveyoung",
+    img: "/page004_img02.jpeg",
+    alt: "올리브영 바디케어 인플루언서 마케팅",
+    tag: "INFLUENCER",
+    sub: "2023",
+    title: "올리브영 바디케어 인플루언서 마케팅",
+    span: "md:col-span-8",
+    aspect: "aspect-[16/9]",
+    titleSize: "text-xl sm:text-2xl",
+  },
+  {
+    href: "/expo",
+    img: "/page005_img03.jpeg",
+    alt: "일레븐휴즈데이 박람회 기획",
+    tag: "BEAUTY EXPO",
+    sub: "2024",
+    title: "일레븐휴즈데이 박람회 기획",
+    span: "md:col-span-4",
+    aspect: "aspect-[16/9] sm:aspect-square",
+    titleSize: "text-lg sm:text-xl",
+  },
+  {
+    href: "/seeding",
+    img: "/seeding_combined.jpeg",
+    alt: "해외 리뷰어 시딩 캠페인",
+    tag: "GLOBAL",
+    sub: null,
+    title: "해외 리뷰어 시딩 캠페인",
+    span: "md:col-span-6",
+    aspect: "aspect-[11/5]",
+    titleSize: "text-lg sm:text-xl",
+  },
+  {
+    href: "/live",
+    img: "/naver_live_combined.jpeg",
+    alt: "네이버 쇼핑 라이브 기획",
+    tag: "LIVE",
+    sub: null,
+    title: "네이버 쇼핑 라이브 기획",
+    span: "md:col-span-6",
+    aspect: "aspect-[13/6]",
+    titleSize: "text-xl sm:text-2xl",
+  },
+  {
+    href: "/supporters",
+    img: "/page013_img02.jpeg",
+    alt: "디어도어 서포터즈 3회 운영",
+    tag: "SUPPORTERS",
+    sub: "2023",
+    title: "디어도어 서포터즈 3회 운영",
+    span: "md:col-span-5",
+    aspect: "aspect-[16/9]",
+    titleSize: "text-lg sm:text-xl",
+  },
+];
+
 export default function Projects() {
   return (
     <section className="max-w-7xl mx-auto px-5 sm:px-6 py-14 md:py-24" id="work">
@@ -18,13 +76,6 @@ export default function Projects() {
               브랜드 성과를 직접 만들어낸 엄선된 프로젝트들입니다.
             </p>
           </div>
-          <a
-            href="#"
-            className="text-[#8a4a65] font-bold border-b-2 border-[#f0a1bf] pb-1 hover:border-[#8a4a65] transition-colors whitespace-nowrap text-sm"
-            style={{ fontFamily: "var(--font-headline)" }}
-          >
-            전체 보기
-          </a>
         </div>
       </AnimatedSection>
 
@@ -63,103 +114,39 @@ export default function Projects() {
       </AnimatedSection>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-        {/* Large: 올리브영 */}
-        <AnimatedSection delay={0} className="md:col-span-8">
-          <a href="/oliveyoung" className="group block">
-            <div className="aspect-[16/9] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              <img src="/page004_img02.jpeg" alt="올리브영 바디케어 인플루언서 마케팅" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex gap-2 mb-2 md:mb-3">
-              <span
-                className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
-                style={{ fontFamily: "var(--font-label)" }}
+        {campaigns.map((c, i) => (
+          <AnimatedSection key={c.title} delay={i * 80} className={c.span}>
+            <a href={c.href} className="group block">
+              <div
+                className={`${c.aspect} rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-[1.01]`}
               >
-                INFLUENCER
-              </span>
-              <span
-                className="px-3 py-1 bg-[#e1e3e4] text-[#514347] rounded-full text-xs font-bold"
-                style={{ fontFamily: "var(--font-label)" }}
+                <img src={c.img} alt={c.alt} className="w-full h-full object-cover" />
+              </div>
+              <div className="flex gap-2 mb-2 md:mb-3">
+                <span
+                  className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
+                  style={{ fontFamily: "var(--font-label)" }}
+                >
+                  {c.tag}
+                </span>
+                {c.sub && (
+                  <span
+                    className="px-3 py-1 bg-[#e1e3e4] text-[#514347] rounded-full text-xs font-bold"
+                    style={{ fontFamily: "var(--font-label)" }}
+                  >
+                    {c.sub}
+                  </span>
+                )}
+              </div>
+              <h3
+                className={`${c.titleSize} font-bold group-hover:text-[#8a4a65] transition-colors`}
+                style={{ fontFamily: "var(--font-headline)" }}
               >
-                2023
-              </span>
-            </div>
-            <h3
-              className="text-xl sm:text-2xl font-bold group-hover:text-[#8a4a65] transition-colors"
-              style={{ fontFamily: "var(--font-headline)" }}
-            >
-              올리브영 바디케어 인플루언서 마케팅
-            </h3>
-          </a>
-        </AnimatedSection>
-
-        {/* Small: 박람회 */}
-        <AnimatedSection delay={100} className="md:col-span-4">
-          <div className="group">
-            <div className="aspect-[16/9] sm:aspect-square rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              <img src="/page005_img03.jpeg" alt="일레븐휴즈데이 박람회 기획" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex gap-2 mb-2 md:mb-3">
-              <span
-                className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
-                style={{ fontFamily: "var(--font-label)" }}
-              >
-                BEAUTY EXPO
-              </span>
-            </div>
-            <h3
-              className="text-lg sm:text-xl font-bold"
-              style={{ fontFamily: "var(--font-headline)" }}
-            >
-              일레븐휴즈데이 박람회 기획
-            </h3>
-          </div>
-        </AnimatedSection>
-
-        {/* Small: 해외 시딩 */}
-        <AnimatedSection delay={150} className="md:col-span-6">
-          <div className="group">
-            <div className="aspect-[11/5] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              <img src="/seeding_combined.jpeg" alt="해외 리뷰어 시딩 캠페인" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex gap-2 mb-2 md:mb-3">
-              <span
-                className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
-                style={{ fontFamily: "var(--font-label)" }}
-              >
-                GLOBAL
-              </span>
-            </div>
-            <h3
-              className="text-lg sm:text-xl font-bold"
-              style={{ fontFamily: "var(--font-headline)" }}
-            >
-              해외 리뷰어 시딩 캠페인
-            </h3>
-          </div>
-        </AnimatedSection>
-
-        {/* Large: 네이버 라이브 */}
-        <AnimatedSection delay={200} className="md:col-span-6">
-          <div className="group">
-            <div className="aspect-[13/6] rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 flex items-center justify-center text-[#514347] text-sm transition-transform duration-500 group-hover:scale-[1.01]">
-              <img src="/naver_live_combined.jpeg" alt="네이버 쇼핑 라이브" className="w-full h-full object-cover" />
-            </div>
-            <div className="flex gap-2 mb-2 md:mb-3">
-              <span
-                className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
-                style={{ fontFamily: "var(--font-label)" }}
-              >
-                LIVE
-              </span>
-            </div>
-            <h3
-              className="text-xl sm:text-2xl font-bold"
-              style={{ fontFamily: "var(--font-headline)" }}
-            >
-              네이버 쇼핑 라이브
-            </h3>
-          </div>
-        </AnimatedSection>
+                {c.title}
+              </h3>
+            </a>
+          </AnimatedSection>
+        ))}
       </div>
     </section>
   );

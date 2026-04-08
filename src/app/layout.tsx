@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Manrope, Nunito } from "next/font/google";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -12,6 +12,12 @@ const manrope = Manrope({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const nunito = Nunito({
+  variable: "--font-bubble",
+  subsets: ["latin"],
+  weight: ["800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${plusJakarta.variable} ${manrope.variable} scroll-smooth`}>
+    <html lang="ko" className={`${plusJakarta.variable} ${manrope.variable} ${nunito.variable} scroll-smooth`}>
       <body className="min-h-full antialiased">{children}</body>
     </html>
   );

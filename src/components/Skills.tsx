@@ -13,6 +13,10 @@ const skillGroups = [
     category: "Business Efficiency",
     skills: ["MS Office", "데이터 분석", "제안서 작성"],
   },
+  {
+    category: "AI Tools",
+    skills: ["Claude Code", "Gemini", "Git"],
+  },
 ];
 
 const brands = ["디어도어", "일레븐휴즈데이", "L'ESSENTIAL", "아이나코", "누벨르"];
@@ -54,7 +58,7 @@ export default function Skills() {
         </div>
       </div>
 
-      <div>
+      <div className="space-y-10 md:space-y-12">
         <AnimatedSection delay={100}>
           <h2
             className="text-xl sm:text-2xl font-bold mb-8 md:mb-10"
@@ -74,6 +78,47 @@ export default function Skills() {
               >
                 {brand}
               </span>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={200}>
+          <h2
+            className="text-xl sm:text-2xl font-bold mb-8 md:mb-10"
+            style={{ fontFamily: "var(--font-headline)" }}
+          >
+            Certifications | 자격/증명
+          </h2>
+          <div className="flex flex-col gap-3">
+            {[
+              { name: "OPIc", grade: "IH", date: "2023.11" },
+              { name: "SQLD", grade: "취득", date: "2024.09" },
+            ].map((cert) => (
+              <div
+                key={cert.name}
+                className="flex items-center justify-between px-4 sm:px-5 py-3 bg-[#e7e8e9] rounded-lg"
+              >
+                <div className="flex items-center gap-3">
+                  <span
+                    className="text-sm font-bold text-[#191c1d]"
+                    style={{ fontFamily: "var(--font-label)" }}
+                  >
+                    {cert.name}
+                  </span>
+                  <span
+                    className="px-2 py-0.5 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
+                    style={{ fontFamily: "var(--font-label)" }}
+                  >
+                    {cert.grade}
+                  </span>
+                </div>
+                <span
+                  className="text-xs text-[#514347] font-semibold"
+                  style={{ fontFamily: "var(--font-label)" }}
+                >
+                  {cert.date}
+                </span>
+              </div>
             ))}
           </div>
         </AnimatedSection>
