@@ -124,7 +124,7 @@ export default function InfluencerPage() {
             <div className="hero-animate-d2 relative w-full lg:w-[48%] shrink-0">
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#ffd9e5]">
                 <img
-                  src="/page013_img02.jpeg"
+                  src="/page004_img02.jpeg"
                   alt="국내 인플루언서 마케팅"
                   className="w-full h-full object-cover"
                 />

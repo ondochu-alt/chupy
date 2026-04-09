@@ -124,7 +124,7 @@ export default function SupportersPage() {
             <div className="hero-animate-d2 relative w-full lg:w-[48%] shrink-0">
               <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#ffd9e5]">
                 <img
-                  src="/page004_img02.jpeg"
+                  src="/page013_img02.jpeg"
                   alt="디어도어 서포터즈 3회 운영"
                   className="w-full h-full object-cover"
                 />
