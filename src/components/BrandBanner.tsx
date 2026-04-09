@@ -1,14 +1,14 @@
 const logos = [
-  { src: "/logos/logo_elevenhuesday.png", alt: "일레븐휴즈데이", invert: false, h: 52,  w: 140 },
-  { src: "/logos/logo_deardoer.png",      alt: "디어도어",       invert: false, h: 52,  w: 140 },
-  { src: "/logos/logo_lessential.jpg",    alt: "L'ESSENTIAL",    invert: false, h: 100, w: 220 },
-  { src: "/logos/logo_nubelle.png",       alt: "누벨르",         invert: false, h: 100, w: 200 },
-  { src: "/logos/logo_giorgioarmani.png", alt: "Giorgio Armani", invert: false, h: 100, w: 220 },
-  { src: "/logos/logo_ysl.webp",          alt: "YSL Beauté",     invert: true,  h: 80,  w: 80  },
-  { src: "/logos/logo_hollys.webp",       alt: "Hollys",         invert: false, h: 100, w: 180 },
-  { src: "/logos/logo_klang.png",         alt: "Klang",          invert: false, h: 52,  w: 140 },
-  { src: "/logos/logo_clio.png",          alt: "CLIO",           invert: true,  h: 100, w: 180 },
-  { src: "/logos/logo_moonglass.png",     alt: "Moon Glass",     invert: false, h: 100, w: 180 },
+  { src: "/logos/logo_elevenhuesday.png", alt: "일레븐휴즈데이", invert: false, h: 52,  w: 140, px: "px-5" },
+  { src: "/logos/logo_deardoer.png",      alt: "디어도어",       invert: false, h: 52,  w: 140, px: "px-5" },
+  { src: "/logos/logo_lessential.jpg",    alt: "L'ESSENTIAL",    invert: false, h: 100, w: 220, px: "px-1" },
+  { src: "/logos/logo_nubelle.png",       alt: "누벨르",         invert: false, h: 100, w: 200, px: "px-1" },
+  { src: "/logos/logo_giorgioarmani.png", alt: "Giorgio Armani", invert: false, h: 100, w: 220, px: "px-1" },
+  { src: "/logos/logo_ysl.webp",          alt: "YSL Beauté",     invert: true,  h: 80,  w: 80,  px: "px-5" },
+  { src: "/logos/logo_hollys.webp",       alt: "Hollys",         invert: false, h: 100, w: 180, px: "px-5" },
+  { src: "/logos/logo_klang.png",         alt: "Klang",          invert: false, h: 52,  w: 140, px: "px-5" },
+  { src: "/logos/logo_clio.png",          alt: "CLIO",           invert: true,  h: 100, w: 180, px: "px-5" },
+  { src: "/logos/logo_moonglass.png",     alt: "Moon Glass",     invert: false, h: 100, w: 180, px: "px-5" },
 ];
 
 const BG = "#f4f5f6";
@@ -40,7 +40,7 @@ export default function BrandBanner() {
         {repeated.map((logo, i) => (
           <div
             key={i}
-            className="flex items-center justify-center shrink-0 px-12"
+            className={`flex items-center justify-center shrink-0 ${logo.px}`}
             style={{ background: BG }}
           >
             <img
