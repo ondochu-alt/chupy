@@ -173,12 +173,12 @@ export default function Hero() {
           </div>
 
           {/* 수채화 꽃 — 오른쪽 하단 */}
-          <div className="absolute -bottom-10 -right-10 w-28 h-32 pointer-events-none">
+          <div className="absolute -bottom-10 -right-10 w-28 h-32 pointer-events-none flower-open">
             <FlowerOpen />
           </div>
 
           {/* 수채화 봉오리 — 왼쪽 상단 */}
-          <div className="absolute -top-8 -left-8 w-20 h-24 pointer-events-none">
+          <div className="absolute -top-8 -left-8 w-20 h-24 pointer-events-none flower-bud">
             <FlowerBud />
           </div>
 
