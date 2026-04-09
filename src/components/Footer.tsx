@@ -44,7 +44,7 @@ export default function Footer() {
               ondo.chu@gmail.com
             </a>
           </div>
-          <p className="text-xs text-zinc-400 mt-4 md:mt-8">© 2025 추예은 포트폴리오.</p>
+          <p className="text-xs text-zinc-400 mt-4 md:mt-8">© 2026 추예은 포트폴리오.</p>
         </AnimatedSection>
       </div>
     </footer>

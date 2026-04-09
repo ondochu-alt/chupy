@@ -97,7 +97,7 @@ export default function Hero() {
           className="text-lg sm:text-xl md:text-2xl text-[#514347] max-w-2xl leading-relaxed hero-animate-d1"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          데이터로 가설을 세우고, 감각적인 영상으로 성과를 증명하는 브랜드 전략 마케터 추예은입니다.
+          데이터로 가설을 세우고,<br />감각적인 영상으로 성과를 증명하는<br /><strong className="text-zinc-900">브랜드 전략 마케터 추예은</strong>입니다.
         </p>
 
         <div className="flex items-center gap-6 pt-2 hero-animate-d2">
