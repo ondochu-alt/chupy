@@ -266,6 +266,23 @@ export default function SupportersPage() {
           </div>
         </section>
 
+        {/* ── Campaign Images ── */}
+        <section className="max-w-7xl mx-auto px-5 sm:px-6 pb-6 md:pb-10">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#f3f4f5]">
+                <img src="/page013_img01.jpeg" alt="디어도어 서포터즈" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#f3f4f5]">
+                <img src="/page013_img06.jpeg" alt="디어도어 서포터즈" className="w-full h-full object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-[#f3f4f5]">
+                <img src="/page013_img08.jpeg" alt="디어도어 서포터즈" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
+
         {/* ── Strategy (How) ── */}
         <section className="w-full bg-[#f4f4f5] py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-6">

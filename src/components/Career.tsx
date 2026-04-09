@@ -5,32 +5,36 @@ const careers = [
     period: "2024.09 — 2025.11",
     role: "브랜드 마케터",
     company: "티엠씨코리아",
+    brand: "일레븐휴즈데이",
     description:
-      "일본 박람회 2억대 신규 계약 체결 기여, 브랜드 SNS 운영 및 콘텐츠 전략 총괄.",
+      "브랜드 컨셉 빌딩 및 온·오프라인 통합 마케팅 운영: 브랜드 톤앤무드 확립을 통한 박람회 기획과 신제품 런칭 전략 수립, 인플루언서 시딩 및 숏폼 기반의 퍼포먼스 콘텐츠 제작 총괄.",
     current: true,
   },
   {
     period: "2022.10 — 2023.11",
     role: "브랜드 마케터",
-    company: "아이콘 비엑스",
+    company: "아이콘비엑스",
+    brand: "디어도어",
     description:
-      "인플루언서 마케팅으로 올리브영 바디케어 랭킹 1위 달성(23.07). 박람회 기획 및 SNS 바이럴 캠페인 운영. 해외 리뷰어 시딩으로 노출 2000% 상승.",
+      "미디어 커머스 기반 매출 극대화 전략 실행: 뷰티·연예인 유튜버 PPL 및 네이버 쇼핑 라이브 기획을 주도했으며, SNS 채널별 최적화된 광고 콘텐츠 제작으로 브랜드 인지도와 판매 전환 동시 달성.",
     current: false,
   },
   {
     period: "2021.06 — 2022.09",
     role: "콘텐츠 마케터",
     company: "맥브레인즈",
+    brand: null,
     description:
-      "퍼포먼스 영상 콘텐츠 기획 및 제작. SNS 콘텐츠 기획 및 제작.",
+      "멀티 브랜드 퍼포먼스 마케팅: 뷰티 및 건기식 등 다각화된 브랜드 포트폴리오의 SNS 광고 콘텐츠를 기획·제작하여 직접적인 매출 견인 및 효율 중심의 영상 마케팅 전개.",
     current: false,
   },
   {
     period: "2019.09 — 2021.06",
     role: "SNS 운영 및 영상 에디터",
     company: "인사이트 컴퍼니",
+    brand: null,
     description:
-      "장편 인터뷰 영상 제작 — 정혁(14만뷰), 배인혁(11만뷰). 브랜드 SNS 채널 운영 및 콘텐츠 기획. 입생로랑, 맥도날드, 디올 등 브랜드사와 협력 광고 콘텐츠 영상 기획 및 제작.",
+      "뉴미디어 콘텐츠 기획 및 영상 편집: 뉴스·정보성 콘텐츠부터 커머스 최적화 영상까지, SNS 트렌드를 반영한 고감도 영상 제작 및 브랜드 필름 기획.",
     current: false,
   },
 ];
@@ -44,7 +48,7 @@ export default function Career() {
             className="text-2xl sm:text-3xl font-bold tracking-tight md:sticky md:top-32"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            Experience | 경력
+            Professional Experience | 경력
           </h2>
         </AnimatedSection>
 
@@ -63,12 +67,25 @@ export default function Career() {
                 >
                   {career.period}
                 </span>
-                <h4
-                  className="text-lg sm:text-xl font-bold"
-                  style={{ fontFamily: "var(--font-headline)" }}
-                >
-                  {career.role} @ {career.company}
-                </h4>
+                <div className="flex items-baseline gap-2 flex-wrap">
+                  <h4
+                    className="text-xl sm:text-2xl font-bold"
+                    style={{ fontFamily: "var(--font-headline)" }}
+                  >
+                    {career.company}
+                    {career.brand && (
+                      <span className="text-base sm:text-lg font-semibold text-[#b0929c] ml-1.5">
+                        ({career.brand})
+                      </span>
+                    )}
+                  </h4>
+                  <span
+                    className="text-sm font-semibold text-[#837378]"
+                    style={{ fontFamily: "var(--font-label)" }}
+                  >
+                    {career.role}
+                  </span>
+                </div>
                 <p className="text-[#514347] mt-3 md:mt-4 leading-relaxed text-sm sm:text-base max-w-xl">
                   {career.description}
                 </p>

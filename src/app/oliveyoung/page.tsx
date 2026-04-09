@@ -263,6 +263,19 @@ export default function OliveYoungPage() {
           </div>
         </section>
 
+        {/* ── Campaign Image ── */}
+        <section className="max-w-7xl mx-auto px-5 sm:px-6 pb-6 md:pb-10">
+          <AnimatedSection>
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src="/page004_img03.jpeg"
+                alt="올리브영 바디케어 인플루언서 마케팅 캠페인"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </AnimatedSection>
+        </section>
+
         {/* ── Strategy (How) ── */}
         <section className="w-full bg-[#f4f4f5] py-14 md:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-6">

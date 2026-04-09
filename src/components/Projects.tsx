@@ -27,10 +27,10 @@ const campaigns = [
   {
     href: "/seeding",
     img: "/seeding_combined.jpeg",
-    alt: "해외 리뷰어 시딩 캠페인",
+    alt: "해외 인플루언서 마케팅",
     tag: "GLOBAL",
     sub: null,
-    title: "해외 리뷰어 시딩 캠페인",
+    title: "해외 인플루언서 마케팅",
     span: "md:col-span-6",
     aspect: "aspect-[11/5]",
     titleSize: "text-lg sm:text-xl",
@@ -54,6 +54,17 @@ const campaigns = [
     sub: "2023",
     title: "디어도어 서포터즈 3회 운영",
     span: "md:col-span-5",
+    aspect: "aspect-[16/9]",
+    titleSize: "text-lg sm:text-xl",
+  },
+  {
+    href: "/influencer",
+    img: "/influencer_domestic.png",
+    alt: "국내 인플루언서 마케팅",
+    tag: "INFLUENCER",
+    sub: "2023",
+    title: "국내 인플루언서 마케팅",
+    span: "md:col-span-7",
     aspect: "aspect-[16/9]",
     titleSize: "text-lg sm:text-xl",
   },
@@ -116,34 +127,48 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
         {campaigns.map((c, i) => (
           <AnimatedSection key={c.title} delay={i * 80} className={c.span}>
-            <a href={c.href} className="group block">
+            <a
+              href={c.href}
+              className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+            >
               <div
-                className={`${c.aspect} rounded-xl overflow-hidden bg-[#f3f4f5] mb-4 md:mb-6 transition-transform duration-500 group-hover:scale-[1.01]`}
+                className={`${c.aspect} overflow-hidden bg-[#f3f4f5]`}
               >
-                <img src={c.img} alt={c.alt} className="w-full h-full object-cover" />
+                <img
+                  src={c.img}
+                  alt={c.alt}
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                />
               </div>
-              <div className="flex gap-2 mb-2 md:mb-3">
-                <span
-                  className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
-                  style={{ fontFamily: "var(--font-label)" }}
-                >
-                  {c.tag}
-                </span>
-                {c.sub && (
+              <div className="px-4 py-4 md:px-5 md:py-5">
+                <div className="flex gap-2 mb-2 md:mb-3">
                   <span
-                    className="px-3 py-1 bg-[#e1e3e4] text-[#514347] rounded-full text-xs font-bold"
+                    className="px-3 py-1 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
                     style={{ fontFamily: "var(--font-label)" }}
                   >
-                    {c.sub}
+                    {c.tag}
                   </span>
-                )}
+                  {c.sub && (
+                    <span
+                      className="px-3 py-1 bg-[#e1e3e4] text-[#514347] rounded-full text-xs font-bold"
+                      style={{ fontFamily: "var(--font-label)" }}
+                    >
+                      {c.sub}
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <h3
+                    className={`${c.titleSize} font-bold group-hover:text-[#8a4a65] transition-colors`}
+                    style={{ fontFamily: "var(--font-headline)" }}
+                  >
+                    {c.title}
+                  </h3>
+                  <span className="shrink-0 text-[#8a4a65] opacity-0 group-hover:opacity-100 transition-opacity text-sm font-bold">
+                    →
+                  </span>
+                </div>
               </div>
-              <h3
-                className={`${c.titleSize} font-bold group-hover:text-[#8a4a65] transition-colors`}
-                style={{ fontFamily: "var(--font-headline)" }}
-              >
-                {c.title}
-              </h3>
             </a>
           </AnimatedSection>
         ))}

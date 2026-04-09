@@ -43,17 +43,6 @@ export default function Footer() {
             >
               ondo.chu@gmail.com
             </a>
-            <div className="flex gap-5 sm:gap-6 mt-3 md:mt-4">
-              {["LinkedIn", "Instagram", "Resume"].map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-zinc-500 hover:text-[#8a4a65] transition-colors hover:underline decoration-[#f0a1bf] underline-offset-4"
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
           </div>
           <p className="text-xs text-zinc-400 mt-4 md:mt-8">© 2025 추예은 포트폴리오.</p>
         </AnimatedSection>

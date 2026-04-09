@@ -2,6 +2,10 @@ import AnimatedSection from "./AnimatedSection";
 
 const skillGroups = [
   {
+    category: "AI Tools",
+    skills: ["Claude Code", "Gemini", "Git"],
+  },
+  {
     category: "Creative Production",
     skills: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
   },
@@ -12,10 +16,6 @@ const skillGroups = [
   {
     category: "Business Efficiency",
     skills: ["MS Office", "데이터 분석", "제안서 작성"],
-  },
-  {
-    category: "AI Tools",
-    skills: ["Claude Code", "Gemini", "Git"],
   },
 ];
 
