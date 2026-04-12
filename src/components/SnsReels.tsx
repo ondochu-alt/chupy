@@ -41,7 +41,7 @@ const SNS_ITEMS = [
 
 // Shimmer 스타일
 const shimmerStyle: CSSProperties = {
-  background: "linear-gradient(90deg, #e1e3e4 25%, #ececee 50%, #e1e3e4 75%)",
+  background: "linear-gradient(90deg, #d4d6d8 25%, #f0f1f3 50%, #d4d6d8 75%)",
   backgroundSize: "200% 100%",
   animation: "shimmer 1.5s ease-in-out infinite",
 };
