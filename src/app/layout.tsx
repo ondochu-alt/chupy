@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Manrope, Nunito } from "next/font/google";
 import "./globals.css";
+import { LocaleProvider } from "@/context/LocaleContext";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-headline",
@@ -36,7 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${plusJakarta.variable} ${manrope.variable} ${nunito.variable} scroll-smooth`}>
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        <LocaleProvider>{children}</LocaleProvider>
+      </body>
     </html>
   );
 }

@@ -18,7 +18,7 @@ export default function BrandBanner() {
 
   return (
     <div
-      className="w-full border-y border-[#e7e8e9] py-10 overflow-hidden"
+      className="w-full py-10 overflow-hidden"
       style={{ background: BG }}
     >
       {/* 헤더 */}

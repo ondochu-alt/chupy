@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback, RefObject } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const SNS_ITEMS = [
@@ -38,6 +38,72 @@ const SNS_ITEMS = [
   { id: 32, video: "/videos/sns_32.mp4" },
   { id: 33, video: "/videos/sns_33.mp4" },
 ];
+
+// 각 카드가 자체 IntersectionObserver를 가져 화면에 보일 때만 재생
+function ReelCard({
+  item,
+  scrollRoot,
+  onOpen,
+}: {
+  item: { id: number; video: string };
+  scrollRoot: RefObject<HTMLDivElement | null>;
+  onOpen: (src: string) => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const root = scrollRoot.current;
+    if (!video || !root) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      {
+        root,         // 뷰포트가 아닌 가로 스크롤 컨테이너 기준
+        threshold: 0.3,
+      }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [scrollRoot]);
+
+  return (
+    <button
+      onClick={() => onOpen(item.video)}
+      className="flex-shrink-0 w-[200px] sm:w-[220px] block cursor-pointer group/card"
+    >
+      <div
+        className="relative overflow-hidden rounded-2xl bg-[#e1e3e4] transition-transform duration-300 group-hover/card:scale-[1.03] group-hover/card:shadow-xl"
+        style={{ aspectRatio: "9/16" }}
+      >
+        <video
+          ref={videoRef}
+          src={item.video}
+          preload="none"
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        {/* 재생 힌트 오버레이 */}
+        <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full bg-white/0 group-hover/card:bg-white/30 transition-all duration-300 flex items-center justify-center backdrop-blur-sm opacity-0 group-hover/card:opacity-100">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
+              <path d="M4 2.5l10 5.5-10 5.5V2.5z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </button>
+  );
+}
 
 export default function SnsReels() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -119,33 +185,12 @@ export default function SnsReels() {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {SNS_ITEMS.map((item) => (
-              <button
+              <ReelCard
                 key={item.id}
-                onClick={() => setActiveVideo(item.video)}
-                className="flex-shrink-0 w-[200px] sm:w-[220px] block cursor-pointer group/card"
-              >
-                <div
-                  className="relative overflow-hidden rounded-2xl bg-[#e1e3e4] transition-transform duration-300 group-hover/card:scale-[1.03] group-hover/card:shadow-xl"
-                  style={{ aspectRatio: "9/16" }}
-                >
-                  <video
-                    src={item.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                  {/* 재생 힌트 오버레이 */}
-                  <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                    <div className="w-10 h-10 rounded-full bg-white/0 group-hover/card:bg-white/30 transition-all duration-300 flex items-center justify-center backdrop-blur-sm opacity-0 group-hover/card:opacity-100">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
-                        <path d="M4 2.5l10 5.5-10 5.5V2.5z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
+                item={item}
+                scrollRoot={scrollRef}
+                onOpen={setActiveVideo}
+              />
             ))}
           </div>
 

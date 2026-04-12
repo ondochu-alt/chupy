@@ -2,8 +2,12 @@
 
 import AnimatedSection from "./AnimatedSection";
 import WatercolorFlowers from "./WatercolorFlowers";
+import { useLocale } from "@/context/LocaleContext";
 
 export default function Philosophy() {
+  const { t } = useLocale();
+  const p = t.philosophy;
+
   return (
     <section className="max-w-7xl mx-auto px-5 sm:px-6 py-14 md:py-32 grid md:grid-cols-2 gap-10 md:gap-20 items-start">
       <div>
@@ -12,7 +16,7 @@ export default function Philosophy() {
             className="text-2xl sm:text-3xl font-bold tracking-tight mb-8"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            Work Philosophy | 업무 철학
+            {p.title}
           </h2>
         </AnimatedSection>
 
@@ -26,11 +30,10 @@ export default function Philosophy() {
                 01
               </span>
               <h4 className="text-xl font-bold" style={{ fontFamily: "var(--font-headline)" }}>
-                데이터 기반 전략
+                {p.item1Title}
               </h4>
               <p className="text-[#514347] leading-relaxed">
-                감에만 의존하지 않습니다. 데이터를 통해 가설을 세우고, 수치로 결과를 검증합니다.
-                리뷰 노출 2000% 상승, 바디케어 카테고리 1위 달성, 매출 5배 상승 등의 실질적 성과가 이러한 업무 방식에서 나왔습니다.
+                {p.item1Body}
               </p>
             </div>
           </AnimatedSection>
@@ -44,12 +47,10 @@ export default function Philosophy() {
                 02
               </span>
               <h4 className="text-xl font-bold" style={{ fontFamily: "var(--font-headline)" }}>
-                감각적인 크리에이티브
+                {p.item2Title}
               </h4>
               <p className="text-[#514347] leading-relaxed">
-                입생로랑, 조르지오 아르마니 뷰티, 디올 등 글로벌 브랜드와 협력한 영상 콘텐츠 기획·제작 경험을 바탕으로,
-                브랜드의 톤과 감성에 맞는 콘텐츠를 직접 기획하고 제작합니다.
-                기획부터 편집·제작까지 영상 콘텐츠 전 과정을 수행할 수 있습니다.
+                {p.item2Body}
               </p>
             </div>
           </AnimatedSection>

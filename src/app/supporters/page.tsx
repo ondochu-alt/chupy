@@ -27,7 +27,7 @@ export default function SupportersPage() {
               className="text-xs text-[#8a4a65] hover:underline decoration-[#f0a1bf] underline-offset-2"
               style={{ fontFamily: "var(--font-label)" }}
             >
-              ← Selected Works | 주요 프로젝트
+              ← Selected Works
             </a>
           </div>
           <a

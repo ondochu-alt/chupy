@@ -1,6 +1,12 @@
+"use client";
+
 import AnimatedSection from "./AnimatedSection";
+import { useLocale } from "@/context/LocaleContext";
 
 export default function Footer() {
+  const { t } = useLocale();
+  const f = t.footer;
+
   return (
     <footer
       className="w-full py-10 md:py-12 mt-12 md:mt-20 bg-zinc-50 border-t border-zinc-100"
@@ -12,17 +18,17 @@ export default function Footer() {
             className="text-2xl sm:text-3xl font-bold text-zinc-900"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            함께 가치를 만들어가요.
+            {f.heading}
           </h2>
           <p className="text-zinc-500 text-sm sm:text-base">
-            브랜드 전략 프로젝트 및 협업을 위한 연락은 언제든 환영합니다.
+            {f.sub}
           </p>
           <a
             href="mailto:ondo.chu@gmail.com"
             className="inline-block bg-[#8a4a65] text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all duration-150 mt-4 shadow-lg shadow-[#8a4a65]/20"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            커피챗 시작하기
+            {f.cta}
           </a>
         </AnimatedSection>
 
@@ -44,7 +50,7 @@ export default function Footer() {
               ondo.chu@gmail.com
             </a>
           </div>
-          <p className="text-xs text-zinc-400 mt-4 md:mt-8">© 2026 추예은 포트폴리오.</p>
+          <p className="text-xs text-zinc-400 mt-4 md:mt-8">{f.copyright}</p>
         </AnimatedSection>
       </div>
     </footer>

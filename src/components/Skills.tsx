@@ -1,27 +1,17 @@
-import AnimatedSection from "./AnimatedSection";
+"use client";
 
-const skillGroups = [
-  {
-    category: "AI Tools",
-    skills: ["Claude Code", "Gemini", "Git"],
-  },
-  {
-    category: "Creative Production",
-    skills: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
-  },
-  {
-    category: "Product Strategy",
-    skills: ["Figma", "Notion", "브랜드 아이덴티티 시각화"],
-  },
-  {
-    category: "Business Efficiency",
-    skills: ["MS Office", "데이터 분석", "제안서 작성"],
-  },
+import AnimatedSection from "./AnimatedSection";
+import { useLocale } from "@/context/LocaleContext";
+
+const certData = [
+  { name: "OPIc", grade: "IH", date: "2023.11" },
+  { name: "SQLD", grade: null, date: "2024.09" },
 ];
 
-const brands = ["디어도어", "일레븐휴즈데이", "L'ESSENTIAL", "아이나코", "누벨르"];
-
 export default function Skills() {
+  const { t } = useLocale();
+  const s = t.skills;
+
   return (
     <section className="max-w-7xl mx-auto px-5 sm:px-6 py-14 md:py-24 grid md:grid-cols-2 gap-12 md:gap-20">
       <div>
@@ -30,11 +20,11 @@ export default function Skills() {
             className="text-xl sm:text-2xl font-bold mb-8 md:mb-10"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            Skills | 스킬
+            {s.title}
           </h2>
         </AnimatedSection>
         <div className="space-y-7 md:space-y-8">
-          {skillGroups.map((group, i) => (
+          {s.groups.map((group, i) => (
             <AnimatedSection key={group.category} delay={i * 100}>
               <p
                 className="text-[#8a4a65] text-xs font-bold tracking-widest uppercase mb-3"
@@ -64,10 +54,10 @@ export default function Skills() {
             className="text-xl sm:text-2xl font-bold mb-8 md:mb-10"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            Brand Experience | 브랜드 경험
+            {s.brandTitle}
           </h2>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            {brands.map((brand, i) => (
+            {s.brands.map((brand, i) => (
               <span
                 key={brand}
                 className="px-4 sm:px-5 py-2 bg-[#e7e8e9] rounded-lg text-sm font-semibold hover:bg-[#ffd9e5] hover:text-[#390721] transition-colors duration-200"
@@ -87,13 +77,10 @@ export default function Skills() {
             className="text-xl sm:text-2xl font-bold mb-8 md:mb-10"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            Certifications | 자격/증명
+            {s.certTitle}
           </h2>
           <div className="flex flex-col gap-3">
-            {[
-              { name: "OPIc", grade: "IH", date: "2023.11" },
-              { name: "SQLD", grade: "취득", date: "2024.09" },
-            ].map((cert) => (
+            {certData.map((cert) => (
               <div
                 key={cert.name}
                 className="flex items-center justify-between px-4 sm:px-5 py-3 bg-[#e7e8e9] rounded-lg"
@@ -109,7 +96,7 @@ export default function Skills() {
                     className="px-2 py-0.5 bg-[#ffd9e5] text-[#390721] rounded-full text-xs font-bold"
                     style={{ fontFamily: "var(--font-label)" }}
                   >
-                    {cert.grade}
+                    {cert.grade ?? s.certAcquired}
                   </span>
                 </div>
                 <span

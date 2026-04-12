@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useLocale } from "@/context/LocaleContext";
 
 // 벌어진 수채화 튤립 (오른쪽 하단 데코)
 function FlowerOpen() {
@@ -72,6 +75,9 @@ function FlowerBud() {
 }
 
 export default function Hero() {
+  const { t } = useLocale();
+  const h = t.hero;
+
   return (
     <section
       className="max-w-7xl mx-auto px-5 sm:px-6 py-12 md:py-28 flex flex-col md:flex-row items-center gap-10 md:gap-16"
@@ -83,7 +89,7 @@ export default function Hero() {
             className="text-[#8a4a65] text-xs sm:text-sm font-bold tracking-widest uppercase"
             style={{ fontFamily: "var(--font-label)" }}
           >
-            MARKETER &amp; STRATEGIST | 마케터 &amp; 전략가
+            {h.role}
           </span>
           <h1
             className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none hero-title-3d"
@@ -97,7 +103,7 @@ export default function Hero() {
           className="text-lg sm:text-xl md:text-2xl text-[#514347] max-w-2xl leading-relaxed hero-animate-d1"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          데이터로 가설을 세우고,<br />감각적인 영상으로 성과를 증명하는<br /><strong className="text-zinc-900">브랜드 전략 마케터 추예은</strong>입니다.
+          {h.tagline1}<br />{h.tagline2}<br /><strong className="text-zinc-900">{h.taglineName}</strong>{h.taglineSuffix}
         </p>
 
         <div className="flex items-center gap-6 pt-2 hero-animate-d2">
@@ -106,7 +112,7 @@ export default function Hero() {
             className="inline-block bg-[#8a4a65] text-white px-7 py-3 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all duration-150 shadow-lg shadow-[#8a4a65]/20"
             style={{ fontFamily: "var(--font-headline)" }}
           >
-            ☕ 커피챗 하기
+            {h.cta}
           </a>
         </div>
       </div>
@@ -140,9 +146,9 @@ export default function Hero() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                이 홈페이지 제가 직접<br />
-                <span style={{ color: "#c026a0" }}>클로드 코드</span>로
-                만들었어요! 🩷
+                {h.speechBubblePre}<br />
+                <span style={{ color: "#c026a0" }}>{h.speechBubbleTool}</span>
+                {h.speechBubblePost}
               </p>
 
               {/* 꼬리 — 왼쪽 하단 방향 */}
@@ -164,7 +170,7 @@ export default function Hero() {
           <div className="rounded-full overflow-hidden aspect-square w-full ring-4 ring-white shadow-xl">
             <Image
               src="/profile.jpg"
-              alt="추예은 프로필 사진"
+              alt={h.profileAlt}
               width={600}
               height={600}
               className="w-full h-full object-cover object-center"
