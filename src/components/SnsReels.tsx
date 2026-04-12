@@ -41,9 +41,9 @@ const SNS_ITEMS = [
 
 // Shimmer 스타일
 const shimmerStyle: CSSProperties = {
-  background: "linear-gradient(90deg, #d4d6d8 25%, #f0f1f3 50%, #d4d6d8 75%)",
+  background: "linear-gradient(110deg, #e0d5d8 25%, #f5eaee 50%, #e0d5d8 75%)",
   backgroundSize: "200% 100%",
-  animation: "shimmer 1.5s ease-in-out infinite",
+  animation: "shimmer 2.2s ease-in-out infinite",
 };
 
 // 각 카드가 자체 IntersectionObserver를 가져 화면에 보일 때만 재생
