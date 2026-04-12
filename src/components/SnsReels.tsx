@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, useCallback, RefObject } from "react";
+import { useRef, useState, useEffect, useCallback, RefObject, type CSSProperties } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const SNS_ITEMS = [
@@ -39,6 +39,13 @@ const SNS_ITEMS = [
   { id: 33, video: "/videos/sns_33.mp4" },
 ];
 
+// Shimmer 스타일
+const shimmerStyle: CSSProperties = {
+  background: "linear-gradient(90deg, #e1e3e4 25%, #ececee 50%, #e1e3e4 75%)",
+  backgroundSize: "200% 100%",
+  animation: "shimmer 1.5s ease-in-out infinite",
+};
+
 // 각 카드가 자체 IntersectionObserver를 가져 화면에 보일 때만 재생
 function ReelCard({
   item,
@@ -50,13 +57,40 @@ function ReelCard({
   onOpen: (src: string) => void;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLButtonElement>(null);
+  const [loaded, setLoaded] = useState(false);
+  const [near, setNear] = useState(false);
 
+  // 1단계: 근처에 오면 src 주입 (미리 로딩)
+  useEffect(() => {
+    const card = cardRef.current;
+    const root = scrollRoot.current;
+    if (!card || !root) return;
+
+    const preloadObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNear(true);
+          preloadObserver.disconnect();
+        }
+      },
+      {
+        root,
+        rootMargin: "0px 600px 0px 0px", // 오른쪽 600px 여유 → 미리 로딩
+      }
+    );
+
+    preloadObserver.observe(card);
+    return () => preloadObserver.disconnect();
+  }, [scrollRoot]);
+
+  // 2단계: 화면에 보이면 재생, 나가면 일시정지
   useEffect(() => {
     const video = videoRef.current;
     const root = scrollRoot.current;
-    if (!video || !root) return;
+    if (!video || !root || !near) return;
 
-    const observer = new IntersectionObserver(
+    const playObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           video.play().catch(() => {});
@@ -65,17 +99,18 @@ function ReelCard({
         }
       },
       {
-        root,         // 뷰포트가 아닌 가로 스크롤 컨테이너 기준
+        root,
         threshold: 0.3,
       }
     );
 
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, [scrollRoot]);
+    playObserver.observe(video);
+    return () => playObserver.disconnect();
+  }, [scrollRoot, near]);
 
   return (
     <button
+      ref={cardRef}
       onClick={() => onOpen(item.video)}
       className="flex-shrink-0 w-[200px] sm:w-[220px] block cursor-pointer group/card"
     >
@@ -83,15 +118,26 @@ function ReelCard({
         className="relative overflow-hidden rounded-2xl bg-[#e1e3e4] transition-transform duration-300 group-hover/card:scale-[1.03] group-hover/card:shadow-xl"
         style={{ aspectRatio: "9/16" }}
       >
+        {/* Shimmer 로딩 표시 */}
+        {!loaded && (
+          <div
+            className="absolute inset-0 z-10"
+            style={shimmerStyle}
+          />
+        )}
+
+        {/* near 상태가 되면 src를 주입하여 로드 시작 */}
         <video
           ref={videoRef}
-          src={item.video}
+          src={near ? item.video : undefined}
           preload="none"
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          onCanPlay={() => setLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
         />
+
         {/* 재생 힌트 오버레이 */}
         <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-300 flex items-center justify-center">
           <div className="w-10 h-10 rounded-full bg-white/0 group-hover/card:bg-white/30 transition-all duration-300 flex items-center justify-center backdrop-blur-sm opacity-0 group-hover/card:opacity-100">
